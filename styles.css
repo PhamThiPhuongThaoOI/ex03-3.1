@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+.pictures {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+} 
+
+.picture {
+  background-color: #e271a1;
+  border-radius: 5px;
+}
+
+.pictures .picture {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:25%;
+  height: 65%;
+  object-fit: cover;
+  background-size: cover;
+  overflow: hidden;
+  transition: all 1000ms ease-in-out;
+  z-index: -1;
+  background-position: center;
+}
+
+.picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.picture.active {
+  position: absolute;
+  z-index: 99;
+  perspective: 1000px;
+  display: flex;
+  justify-content: space-between;
+  opacity: 1;
+}
+
+.box__right {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.box__left {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.tilt-box_left {
+  transform: translate(50%, 50%) rotateY(-20deg);
+  transform-origin: center center;
+}
+
+.tilt-box_right {
+  transform: translate(50%, 50%) rotateY(20deg);
+  transform-origin: center center;
+}
+
+.pictures {
+  perspective: 1000px;
+}
+
+.picture.prev {
+  transform: translate(-150%, -50%) rotateY(20deg) scale(0.9);
+  transform-origin: left center;
+  z-index: 2;
+  opacity: 0.25;
+}
+
+.picture.next {
+  z-index: 2;
+  opacity: 0.25;
+  transform: translate(50%, -50%) rotateY(-20deg) scale(0.9);
+  transform-origin: right center;
+}
+
+.pictures .button-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 100;
+}
+
+.button-container .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  position: relative;
+  opacity: 0.5;
+  transition: all 1000ms ease-in-out;
+}
+
+.button-container .button:hover {
+  opacity: 1;
+}
+
+.button-container .button:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgb(233, 13, 120);
+  z-index: -99;
+  border-radius: 5px;
+}
+
+.button-container .button:nth-child(1) {
+  float: left;
+}
+
+.button-container .button:nth-child(2) {
+  float: right;
+}
